@@ -50,7 +50,7 @@ Version: 1.0
 /* Bold regular */
 @font-face {
     font-family: 'Crimson Text';
-    src: url('./assets/fonts/Crimson_Text/CrimsonText-Bold.ttf');
+    src: url('./assets/fonts/Crimson_Text/CrimsonText-Bold.ttf') format(truetype);
     font-weight: 700;
     font-style: normal;
 }
@@ -58,7 +58,7 @@ Version: 1.0
 /* Semibold regular */
 @font-face {
     font-family: 'Crimson Text';
-    src: url('./assets/fonts/Crimson_Text/CrimsonText-SemiBold.ttf');
+    src: url('./assets/fonts/Crimson_Text/CrimsonText-SemiBold.ttf') format(truetype);
     font-weight: 600;
     font-style: normal;
 }
@@ -66,8 +66,22 @@ Version: 1.0
 body {
     background-color: var(--color-5);
     font-family: Crimson Text;
+    margin: 0;
 }
 
 header {
     background-image: url('./assets/images/records.jpeg');
+}
+
+header h1 {
+    font-family: Crimson Text, serif;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-3);
+}
+
+header p {
+    font-family: Crimson Text, serif;
+    font-style: italic;
+    color: var(--color-2);
 }
