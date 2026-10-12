@@ -11,6 +11,8 @@
 
 <body>
     <header>
-        <h1><?= get_bloginfo('name') ?></h1>
-        <p><?= get_bloginfo('description') ?></p>
+        <div class="header-info">
+            <h1><?= get_bloginfo('name') ?></h1>
+            <p><?= get_bloginfo('description') ?></p>
+        </div>
     </header>
