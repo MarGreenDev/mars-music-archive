@@ -32,7 +32,7 @@ function mars_customize_register($wp_customize)
 On this website website I will be keeping track of my record collection as well as the concerts I’ve been to.
 
 I will also be posting about the music I listen to and other things like records I want, or new artists I discover.',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'sanitize_textarea_field',
     ]);
 
     $wp_customize->add_control('mars_welcome_text', [
