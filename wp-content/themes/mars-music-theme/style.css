@@ -109,6 +109,12 @@ header {
     padding: 0;
 }
 
+.welcome-image {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
 .main-nav {
     background-color: var(--color-4);
 }
