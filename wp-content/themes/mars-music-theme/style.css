@@ -109,6 +109,32 @@ header {
     padding: 0;
 }
 
+.main-nav {
+    background-color: var(--color-4);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+}
+
+.nav-menu a {
+    list-style-type: none;
+    color: var(--color-2);
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 24px;
+
+    border-bottom: 3px var(--color-1) solid
+}
+
 footer {
     background-color: var(--color-4);
     color: var(--color-2);

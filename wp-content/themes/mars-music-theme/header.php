@@ -16,3 +16,10 @@
             <p><?= get_bloginfo('description') ?></p>
         </div>
     </header>
+    <nav class="main-nav">
+        <?php wp_nav_menu(array(
+            'theme_location' => 'navmenu',
+            'container' => false,
+            'menu_class' => 'nav-menu'
+        )); ?>
+    </nav>
