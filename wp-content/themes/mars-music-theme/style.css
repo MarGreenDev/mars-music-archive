@@ -67,6 +67,13 @@ body {
     background-color: var(--color-5);
     font-family: Crimson Text;
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 header {
@@ -100,4 +107,18 @@ header {
     margin: 0;
     margin-top: -25px;
     padding: 0;
+}
+
+footer {
+    background-color: var(--color-4);
+    color: var(--color-2);
+}
+
+.footer-header-info {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.copyright {
+    text-align: center;
 }
