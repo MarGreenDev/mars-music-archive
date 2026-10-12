@@ -71,17 +71,33 @@ body {
 
 header {
     background-image: url('./assets/images/records.jpeg');
+    background-position: center;
 }
 
-header h1 {
-    font-family: Crimson Text, serif;
-    font-weight: 600;
-    font-style: italic;
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin: 0;
+    text-align: center;
+    padding: 75px;
+}
+
+.header-info h1 {
     color: var(--color-3);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 96px;
+    margin: 0;
+    padding: 0;
 }
 
-header p {
-    font-family: Crimson Text, serif;
-    font-style: italic;
+.header-info p {
     color: var(--color-2);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+    margin-top: -25px;
+    padding: 0;
 }
