@@ -73,7 +73,28 @@ body {
 }
 
 main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 355px;
+    gap: 24px;
+    align-items: stretch;
     flex: 1;
+}
+
+.sidebar {
+    background-color: var(--color-3);
+    padding: 15px;
+    min-width: 0;
+}
+
+.sidebar .widget {
+    margin-bottom: 24px;
+}
+
+.sidebar .widget-title {
+    text-align: center;
+    font-style: italic;
+    color: var(--color-5);
+    font-size: 32px;
 }
 
 header {
