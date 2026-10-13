@@ -60,3 +60,20 @@ I will also be posting about the music I listen to and other things like records
 }
 
 add_action('customize_register', 'mars_customize_register');
+
+// Sidebar widget area
+
+function mars_register_sidebars()
+{
+    register_sidebar([
+        'name' => 'Music Archive Sidebar',
+        'id' => 'music-archive-sidebar',
+        'description' => 'Widgets displayed beside the main content.',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
+}
+
+add_action('widgets_init', 'mars_register_sidebars');

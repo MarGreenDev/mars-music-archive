@@ -37,6 +37,7 @@ I will also be posting about the music I listen to and other things like records
                 ?></p>
         </div>
     </div>
+    <?php get_sidebar() ?>
 </main>
 
 <?php get_footer() ?>
