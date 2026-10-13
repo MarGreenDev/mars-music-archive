@@ -132,6 +132,7 @@ header {
 
 .welcome-post {
     padding: 25px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     color: var(--color-2);
@@ -151,6 +152,7 @@ header {
 .welcome-post-content p {
     font-size: 20px;
     white-space: pre-wrap;
+    max-width: 60%;
 }
 
 .welcome-image {
