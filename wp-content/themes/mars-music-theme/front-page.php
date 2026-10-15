@@ -39,18 +39,72 @@ I will also be posting about the music I listen to and other things like records
             </div>
         </div>
 
-        <div class="posts-container">
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
-                    <a href="<?php the_permalink() ?>">
-                        <h2><?php the_title() ?></h2>
-                    </a>
+        <?php
 
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('thumbnail') ?>
-                    <?php endif ?>
-                <?php endwhile ?>
-            <?php endif ?>
+        $latestArgs = [
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        ];
+
+        $newestPost = new WP_Query($latestArgs);
+        $latestPostId = $newestPost->have_posts()
+            ? $newestPost->posts[0]->ID
+            : 0;
+
+        $args = [
+            'post_type' => 'post',
+            'posts_per_page' => 3,
+            'post__not_in' => [$latestPostId]
+        ];
+
+
+        $posts = new WP_Query($args);
+        ?>
+
+
+
+        <div class="posts-container">
+            <div class="latest-post">
+                <?php if ($newestPost->have_posts()) : ?>
+                    <?php while ($newestPost->have_posts()) :
+                        $newestPost->the_post();
+                    ?>
+
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('medium-large') ?>
+
+                        <?php endif ?>
+                        <div>
+                            <h2><?php the_title() ?></h2>
+                        </div>
+
+                    <?php endwhile ?>
+                <?php endif;
+                wp_reset_postdata();
+                ?>
+            </div>
+
+            <div class="other-posts">
+                <?php if ($posts->have_posts()) : ?>
+                    <?php while ($posts->have_posts()) : $posts->the_post(); ?>
+                        <div class="wp-post">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('thumbnail') ?>
+                            <?php endif ?>
+                            <div>
+                                <a href="<?php the_permalink() ?>">
+                                    <h2><?php the_title() ?></h2>
+                                </a>
+                                <?php the_date() ?>
+                            </div>
+                        </div>
+                    <?php endwhile;
+                    wp_reset_postdata();
+                    ?>
+                <?php endif ?>
+            </div>
         </div>
     </div>
     <?php get_sidebar() ?>
