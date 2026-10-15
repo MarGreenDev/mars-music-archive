@@ -1,5 +1,6 @@
 <?php
 add_theme_support('post-thumbnails');
+add_image_size('custom-thumb', 400, 200, true);
 
 function mars_music_theme_setup()
 {

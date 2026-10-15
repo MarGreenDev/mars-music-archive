@@ -142,6 +142,8 @@ header {
     display: flex;
     flex-direction: column;
     color: var(--color-2);
+    border-bottom: var(--color-1) 3px solid;
+    padding-bottom: 50px;
 }
 
 .welcome-post h2 {
@@ -168,21 +170,46 @@ header {
     border-radius: 17px;
 }
 
+.posts-header {
+    color: var(--color-2);
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 600;
+}
+
 .posts-container {
     display: flex;
     color: var(--color-2);
-    gap: 20%;
-    /* justify-content: space-evenly; */
+    gap: 10vw;
+    /* justify-content: space-around; */
 }
 
 .other-posts {
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
+    border-left: var(--color-1) 3px solid;
+    gap: 20px;
 }
 
 .wp-post {
     color: var(--color-2);
     display: flex;
+    gap: 12px;
+}
+
+.post-date {
+    font-style: italic;
+}
+
+.wp-post .post-details h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.latest-post h3 {
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .wp-post a {

@@ -63,7 +63,7 @@ I will also be posting about the music I listen to and other things like records
         $posts = new WP_Query($args);
         ?>
 
-
+        <h2 class="posts-header">Latest posts</h2>
 
         <div class="posts-container">
             <div class="latest-post">
@@ -73,11 +73,14 @@ I will also be posting about the music I listen to and other things like records
                     ?>
 
                         <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium-large') ?>
+                            <?php the_post_thumbnail('custom-thumb') ?>
 
                         <?php endif ?>
-                        <div>
-                            <h2><?php the_title() ?></h2>
+                        <div class="post-details">
+                            <h3><?php the_title() ?></h3>
+                            <p class="post-date">
+                                <?php the_date() ?>
+                            </p>
                         </div>
 
                     <?php endwhile ?>
@@ -93,11 +96,13 @@ I will also be posting about the music I listen to and other things like records
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('thumbnail') ?>
                             <?php endif ?>
-                            <div>
+                            <div class="post-details">
                                 <a href="<?php the_permalink() ?>">
-                                    <h2><?php the_title() ?></h2>
+                                    <h3><?php the_title() ?></h3>
                                 </a>
-                                <?php the_date() ?>
+                                <p class="post-date">
+                                    <?php echo esc_html(get_the_date()) ?>
+                                </p>
                             </div>
                         </div>
                     <?php endwhile;
