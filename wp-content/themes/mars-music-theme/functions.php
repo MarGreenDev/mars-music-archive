@@ -1,4 +1,6 @@
 <?php
+add_theme_support('post-thumbnails');
+
 function mars_music_theme_setup()
 {
     register_nav_menus(array(
