@@ -80,3 +80,46 @@ function mars_register_sidebars()
 }
 
 add_action('widgets_init', 'mars_register_sidebars');
+
+function mars_register_vinyl_post_type() {
+
+	$labels = array(
+		'name' => 'Vinyl Records',
+		'singular_name' => 'Vinyl Record',
+		'add_new' => 'Add Vinyl Record',
+		'add_new_item' => 'Add Vinyl Record',
+		'edit_item' => 'Edit Vinyl Record',
+		'new_item' => 'New Vinyl Record',
+		'view_item' => 'View Vinyl Record',
+		'search_items' => 'Search Vinyl Records',
+		'not_found' => 'No Vinyl Records found',
+		'menu_name' => 'Vinyl Collection',
+	);
+
+	$args = [
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => ['slug' => 'vinyl'],
+		'menu_icon' => 'dashicons-album',
+		'supports' => [
+			'title',
+			'editor',
+			'thumbnail',
+			'excerpt',
+		],
+		'show_in_rest' => true,
+		'show_ui' => true,
+	];
+	register_post_type('vinyl', $args);
+}
+add_action('init', 'mars_register_vinyl_post_type');
+
+add_action('admin_notices', function () {
+	if (post_type_exists('vinyl')) {
+		echo '<div class="notice notice-success"><p>Vinyl post type is registered!</p></div>';
+	} else {
+		echo '<div class="notice notice-error"><p>Vinyl post type is NOT registered!</p></div>';
+	}
+});
+
