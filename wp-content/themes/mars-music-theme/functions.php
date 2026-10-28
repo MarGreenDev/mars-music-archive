@@ -1,6 +1,7 @@
 <?php
 add_theme_support('post-thumbnails');
 add_image_size('custom-thumb', 400, 200, true);
+add_image_size('custom-thumb-vinyl', 250, 250, true);
 
 function mars_music_theme_setup()
 {
@@ -80,3 +81,38 @@ function mars_register_sidebars()
 }
 
 add_action('widgets_init', 'mars_register_sidebars');
+
+function mars_register_vinyl_post_type() {
+
+	$labels = array(
+		'name' => 'Vinyl Records',
+		'singular_name' => 'Vinyl Record',
+		'add_new' => 'Add Vinyl Record',
+		'add_new_item' => 'Add Vinyl Record',
+		'edit_item' => 'Edit Vinyl Record',
+		'new_item' => 'New Vinyl Record',
+		'view_item' => 'View Vinyl Record',
+		'search_items' => 'Search Vinyl Records',
+		'not_found' => 'No Vinyl Records found',
+		'menu_name' => 'Vinyl Collection',
+	);
+
+	$args = [
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => ['slug' => 'vinyl'],
+		'menu_icon' => 'dashicons-album',
+		'supports' => [
+			'title',
+			'editor',
+			'thumbnail',
+			'excerpt',
+		],
+		'show_in_rest' => true,
+		'show_ui' => true,
+	];
+	register_post_type('vinyl', $args);
+}
+add_action('init', 'mars_register_vinyl_post_type');
+
