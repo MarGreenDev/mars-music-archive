@@ -155,6 +155,7 @@ class Mars_Latest_Vinyl_Widget extends WP_Widget {
 					);
 				}
 				echo '<h4>' . get_the_title() . '</h4>';
+				echo '<p>' . esc_html(get_field('artist')) . '</p>';
 				echo '</a>';
 				echo '</div>';
 			}
