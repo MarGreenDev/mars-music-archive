@@ -217,6 +217,34 @@ header {
     text-decoration: none;
 }
 
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+}
+
+.records-header {
+    font-family: "Crimson Text";
+    font-size: 48px;
+    color: var(--color-2);
+    margin: 0;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.vinyl-card {
+    display: flex;
+    flex-direction: column;
+    border: var(--color-4) 2px solid;
+    color: var(--color-2);
+    align-items: center;
+    font-family: "Crimson Text";
+
+    p {
+        font-style: italic;
+    }
+}
+
 .main-nav {
     background-color: var(--color-4);
 }

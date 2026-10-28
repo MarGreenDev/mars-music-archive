@@ -1,6 +1,7 @@
 <?php
 add_theme_support('post-thumbnails');
 add_image_size('custom-thumb', 400, 200, true);
+add_image_size('custom-thumb-vinyl', 250, 250, true);
 
 function mars_music_theme_setup()
 {
@@ -114,12 +115,4 @@ function mars_register_vinyl_post_type() {
 	register_post_type('vinyl', $args);
 }
 add_action('init', 'mars_register_vinyl_post_type');
-
-add_action('admin_notices', function () {
-	if (post_type_exists('vinyl')) {
-		echo '<div class="notice notice-success"><p>Vinyl post type is registered!</p></div>';
-	} else {
-		echo '<div class="notice notice-error"><p>Vinyl post type is NOT registered!</p></div>';
-	}
-});
 

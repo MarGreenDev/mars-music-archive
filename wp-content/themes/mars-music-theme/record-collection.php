@@ -2,35 +2,40 @@
 get_header()
 ?>
 
-<main>
-    <div class="page-layout">
-        <h2>My records</h2>
 
-        <?php
-        $vinyl_records = new WP_Query([
-                'post_type'      => 'vinyl',
-                'posts_per_page' => -1,
-        ]);
+    <main>
+        <div class="front-page-layout">
+            <h2 class="records-header">My records</h2>
 
-        while ($vinyl_records->have_posts()) {
-            $vinyl_records->the_post();
+            <div class="page-layout">
 
-            the_post_thumbnail();
+                <?php
+                $vinyl_records = new WP_Query( [
+                    'post_type'      => 'vinyl',
+                    'posts_per_page' => - 1,
+                ] );
 
-            the_title('<h2>', '</h2>');
-            ?>
-            <p>Artist: <?php echo esc_html(get_field('artist') ?: 'Unknown'); ?></p>
-            <?php
-        }
+                while ( $vinyl_records->have_posts() ) {
+                    $vinyl_records->the_post();
+                    ?>
+                    <div class="vinyl-card">
+                        <?php
+                        the_post_thumbnail( 'custom-thumb-vinyl' );
+                        the_title( '<h2>', '</h2>' );
+                        ?>
+                        <p>Artist: <?php echo esc_html( get_field( 'artist' ) ?: 'Unknown' ); ?></p>
+                    </div>
+                    <?php
+                }
 
-        wp_reset_postdata();
-        ?>
-    </div>
+                wp_reset_postdata();
+                ?>
+            </div>
+        </div>
 
 
-
-    <?php get_sidebar() ?>
-</main>
+        <?php get_sidebar() ?>
+    </main>
 
 <?php
 get_footer()
