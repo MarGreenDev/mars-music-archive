@@ -210,6 +210,18 @@ header {
 .latest-post h3 {
     font-size: 24px;
     font-weight: 600;
+    color: var(--color-2);
+    margin: 0;
+}
+
+.latest-post .post-date {
+    margin: 0;
+    color: var(--color-3);
+}
+
+.latest-post a {
+    text-decoration: none;
+    color: var(--color-2);
 }
 
 .wp-post a {
@@ -274,6 +286,22 @@ header {
     }
 }
 
+.post-info {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-2);
+    text-align: left;
+
+    .date-display {
+        font-style: italic;
+    }
+}
+
+.post-layout {
+    display: flex;
+    padding: 35px;
+    gap: 40px;
+}
 
 .main-nav {
     background-color: var(--color-4);
