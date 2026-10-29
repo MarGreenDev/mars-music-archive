@@ -18,6 +18,7 @@ get_header()
                 while ( $vinyl_records->have_posts() ) {
                     $vinyl_records->the_post();
                     ?>
+                    <a href="<?php the_permalink(); ?>">
                     <div class="vinyl-card">
                         <?php
                         the_post_thumbnail( 'custom-thumb-vinyl' );
@@ -25,6 +26,7 @@ get_header()
                         ?>
                         <p>Artist: <?php echo esc_html( get_field( 'artist' ) ?: 'Unknown' ); ?></p>
                     </div>
+                    </a>
                     <?php
                 }
 

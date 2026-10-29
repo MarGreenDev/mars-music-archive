@@ -72,6 +72,10 @@ body {
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+}
+
 main {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 355px;
