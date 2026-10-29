@@ -76,13 +76,17 @@ I will also be posting about the music I listen to and other things like records
                             <?php the_post_thumbnail('custom-thumb') ?>
 
                         <?php endif ?>
+                        <a href="<?php the_permalink() ?>">
                         <div class="post-details">
                             <h3><?php the_title() ?></h3>
                             <p class="post-date">
                                 <?php the_date() ?>
                             </p>
+                            <p>
+                                <?php the_excerpt() ?>
+                            </p>
                         </div>
-
+                        </a>
                     <?php endwhile ?>
                 <?php endif;
                 wp_reset_postdata();
