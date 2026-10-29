@@ -1,7 +1,7 @@
 <?php
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'custom-thumb', 400, 200, true );
-add_image_size( 'custom-thumb-vinyl', 250, 250, true );
+add_image_size( 'custom-thumb-vinyl', 250, 250, false );
 
 function mars_music_theme_setup() {
 	register_nav_menus( array(
@@ -172,4 +172,3 @@ function mars_register_latest_vinyl_widget() {
 	register_widget( 'Mars_Latest_Vinyl_Widget');
 }
 add_action( 'widgets_init', 'mars_register_latest_vinyl_widget' );
-

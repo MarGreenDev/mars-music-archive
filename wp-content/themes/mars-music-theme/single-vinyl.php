@@ -10,7 +10,7 @@ get_header();
                 <div class="vinyl-page">
                     <?php the_post(); ?>
                     <?php if ( has_post_thumbnail() ) :
-                        the_post_thumbnail( 'large' );
+                        the_post_thumbnail( 'medium' );
                     endif; ?>
                     <div>
                         <div class="vinyl-title-info">
