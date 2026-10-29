@@ -16,7 +16,7 @@
             <p><?= get_bloginfo('description') ?></p>
         </div>
     </header>
-    <nav class="main-nav">
+    <nav class="main-nav" id="nav-bar">
         <?php wp_nav_menu(array(
             'theme_location' => 'navmenu',
             'container' => false,
