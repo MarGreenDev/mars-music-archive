@@ -275,15 +275,18 @@ header {
         font-style: italic;
         font-weight: 600;
     }
+
     h4, p, a {
         text-align: center;
         text-decoration: none;
         color: var(--color-5);
     }
+
     h4 {
         font-size: 20px;
         margin: 0;
     }
+
     p {
         color: var(--color-4);
         font-style: italic;
@@ -305,6 +308,35 @@ header {
     display: flex;
     padding: 35px;
     gap: 40px;
+}
+
+.vinyl-page {
+    display: flex;
+    padding: 50px;
+    color: var(--color-2);
+    gap: 50px;
+}
+
+.vinyl-title-info h2, h3, h4 {
+    margin: 0;
+}
+
+.vinyl-title-info {
+
+    h2 {
+        font-size: 48px;
+        font-style: italic;
+    }
+
+    h3 {
+        font-weight: 500;
+    }
+
+    h4 {
+        font-weight: 400;
+        color: var(--color-3);
+        font-style: italic;
+    }
 }
 
 .main-nav {
