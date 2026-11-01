@@ -1,5 +1,7 @@
 # Mar's Music Archive
 
+[blog.margreen.dev](https://blog.margreen.dev/)
+
 ### Wordpress blog
 
 I made a music archive/blog as a school assignment. In this README I will be explaining my choices and the plugins I used.
